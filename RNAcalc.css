@@ -4,9 +4,10 @@ body{
 }
 canvas{
     float: right;
-    width: 400px;
-    height: 400px;
-    background-color: aqua;
+    width: 450px;
+    height: 450px;
+    background: linear-gradient(45deg,#ccff66,#aaaa11,#ccff66);
+/*    background-color: #ccff66;*/
 }
 h1{
     background-color: black;
