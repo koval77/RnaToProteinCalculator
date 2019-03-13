@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RNA to aminoacid calculator</title>
+    <link rel="stylesheet" type="text/css" href="RNAcalc.css">
+<!--    <script src="rnacalc.js"></script>-->
+    <script>
+        var sliced=[];
+        var aminoacid=[];
+
+    function checkIfIsStart(thisstr){
+        if(thisstr.includes("AUG")){
+            console.log("aug jest included");
+        }
+        else {
+            console.log("aug not included");
+        }
+    }
+    function trans(codon){
+        switch(codon){
+            case ("UUU"):
+            case ("UUC"):
+                aminoacid.push("Phe");
+                break;
+            case ("UUA"):
+            case ("UUG"):
+                aminoacid.push("Leu");
+                break;
+            case ("CUU"):
+            case ("CUC"):
+            case ("CUA"):
+            case ("CUG"):
+                aminoacid.push("Leu");
+                break;
+            case ("AUU"):
+            case ("AUC"):
+            case ("AUA"):
+                aminoacid.push("Ile");
+                break;
+            case ("AUG"):
+                aminoacid.push("Met");
+                break;
+            case ("GUA"):
+            case ("GUG"):
+            case ("GUC"):
+            case ("GUU"):
+                aminoacid.push("Val");
+                break;
+            case ("UCU"):
+            case ("UCC"):
+            case ("UCA"):
+            case ("UCG"):
+            case ("AGU"):
+            case ("AGC"):
+                aminoacid.push("Ser");
+                break;
+            case ("CCA"):
+            case ("CCU"):
+            case ("CCG"):
+            case ("CCC"):
+                aminoacid.push("Pro");
+                break;
+            case ("ACA"):
+            case ("ACU"):
+            case ("ACG"):
+            case ("ACC"):
+                aminoacid.push("Thr");
+                break;
+            case ("GCA"):
+            case ("GCU"):
+            case ("GCG"):
+            case ("GCC"):
+                aminoacid.push("Ala");
+                break;
+            case ("UAU"):
+            case ("UAC"):
+                aminoacid.push("Tyr");
+                break;
+            case ("UAA"):
+            case ("UAG"):
+            case ("UGA"):
+                aminoacid.push("STOP");
+                break;
+            case ("CAU"):
+            case ("CAC"):
+                aminoacid.push("His");
+                break;
+            case ("CAA"):
+            case ("CAG"):
+                aminoacid.push("Gin");
+                break;
+            case ("AAU"):
+            case ("AAC"):
+                aminoacid.push("Asn");
+                break;
+            case ("AAA"):
+            case ("AAG"):
+                aminoacid.push("Lys");
+                break;
+            case ("GAU"):
+            case ("GAC"):
+                aminoacid.push("Asp");
+                break;
+            case ("GAA"):
+            case ("GAG"):
+                aminoacid.push("Glu");
+                break;
+            case ("UGU"):
+            case ("UGC"):
+                aminoacid.push("Cys");
+                break;
+            case ("UGG"):
+                aminoacid.push("Trp");
+                break;
+            case ("CGU"):
+            case ("CGC"):
+            case ("CGA"):
+            case ("CGG"):
+            case ("AGA"):
+            case ("AGG"):
+                aminoacid.push("Arg");
+                break;
+            case ("GGU"):
+            case ("GGC"):
+            case ("GGG"):
+            case ("GGA"):
+                aminoacid.push("Gly");
+                break;
+            default:
+                aminoacid.push("--NOT A CORRECT CODON--");
+        }
+    }
+
+    function translaterna(){
+        var rrnnaa=document.getElementById('rna');
+        rrnnaa.value=rrnnaa.value.toUpperCase();
+        checkIfIsStart(rrnnaa.value);
+        var start=rrnnaa.value.indexOf("AUG");
+        var slicingstart=rrnnaa.value.slice(start);
+        //Hearth of this program
+        for(var i=0;i<slicingstart.length;i=i+3){
+            sliced.push(slicingstart[i]+slicingstart[i+1]+slicingstart[i+2]);
+        }
+        console.log(sliced);
+        for(var a=0;a<=sliced.length;a++){
+            trans(sliced[a])
+        }
+        console.log(aminoacid);
+        document.getElementById('pos').innerHTML='Position of start codon: '+start;
+        document.getElementById('result').innerHTML='Starting: '+slicingstart+'\n\n\nAminoacids: '+aminoacid;
+    }
+    function onMsDw(obj){
+          obj.style.backgroundColor = "#1ec5e5";
+  obj.innerHTML = "Tadam!!!";
+        obj.style.border="25px 56px 54px 54px"
+    }
+        function onMsUp(obj){
+              obj.style.backgroundColor="#4e4Aa8";
+  obj.innerHTML="Try again!";
+            obj.style.border="5px 6px 4px 4px"
+        }
+    </script>
+
+</head>
+    <body>
+        <header><h1>RNA to Protein calculator</h1></header>
+        <section id="rnatoprotein">
+        <article><p>Insert RNA letters that you want to translate here:</p></article>
+            RNA: <input type="text" id="rna">
+        </section>
+<!--        onmousedown="onMsDw(this)" onmouseup="onMsUp(this)-->
+            <button onclick="translaterna()">Calculate protein</button>
+        <canvas id="c"></canvas>
+        <section class="prettycard">
+        <p id="resp">The result:</p>
+            <p id="pos"></p>
+            <p id="result"></p>
+        </section>
+        <hr>
+        <div>
+        </div>
+        <script>
+        var c=document.querySelector("#c");
+        var ctx=c.getContext("2d");
+        var image=new Image();
+        image.onload=function(){
+            console.log("image loaded");
+            ctx.drawImage(image,0,0,c.width,c.height-10);
+            for(var i=1;i<14;i++){ctx.strokeRect(10+(i*20),143,10,5);}
+        }
+        image.src="nukleo.PNG"
+        </script>
+    </body>
+</html>
