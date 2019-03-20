@@ -10,6 +10,7 @@
         }
     }
     function trans(codon){
+//                        for(var t=aminoacid.length;t=0;t--){aminoacid.pop();}
         switch(codon){
             case ("UUU"):
             case ("UUC"):
