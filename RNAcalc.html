@@ -2,17 +2,18 @@
 <html>
 <head>
     <title>RNA to aminoacid calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="RNAcalc.css">
     <script src="rna.js"></script>
 </head>
     <body>
-        <header><h1>RNA to Protein calculator</h1></header>
+        <header><h1>mRNA to Protein calculator</h1></header>
         <section id="rnatoprotein" class="fullCard">
         <article><p>Insert RNA letters that you want to translate here:</p></article>
             RNA: <input type="text" id="rna">
         </section>
 <!--        onmousedown="onMsDw(this)" onmouseup="onMsUp(this)-->
-            <button onclick="translaterna()">Calculate protein</button>
+            <button onclick="translaterna()"><strong>Translate codons</strong></button>
         <canvas id="c"></canvas>
         <section class="prettycard">
             <p id="resp"><strong>The result:</strong></p>
@@ -22,6 +23,7 @@
         <hr>
         <div>
         </div>
+
         <script>
         var c=document.querySelector("#c");
         var ctx=c.getContext("2d");
