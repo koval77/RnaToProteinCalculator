@@ -73,7 +73,7 @@
             case ("UAA"):
             case ("UAG"):
             case ("UGA"):
-                aminoacid.push("STOP");
+                aminoacid.push("STOP\n");
                 break;
             case ("CAU"):
             case ("CAC"):
@@ -126,6 +126,8 @@
     }
 
     function translaterna(){
+        sliced=[];
+        var pr='uuuaugucuucuucuuauuauuauuag';
         var rrnnaa=document.getElementById('rna');
         rrnnaa.value=rrnnaa.value.toUpperCase();
         checkIfIsStart(rrnnaa.value);
@@ -135,13 +137,15 @@
         for(var i=0;i<slicingstart.length;i=i+3){
             sliced.push(slicingstart[i]+slicingstart[i+1]+slicingstart[i+2]);
         }
+        aminoacid=[];
         console.log(sliced);
         for(var a=0;a<=sliced.length;a++){
             trans(sliced[a])
         }
+
         console.log(aminoacid);
         document.getElementById('pos').innerHTML='Position of start codon: '+start;
-        document.getElementById('result').innerHTML='Starting: '+slicingstart+'\n\n\nAminoacids: '+aminoacid;
+        document.getElementById('result').innerHTML=' Translated part: '+slicingstart+'\n\n\nAminoacids:\n '+aminoacid+'\n';
     }
     function onMsDw(obj){
           obj.style.backgroundColor = "#1ec5e5";

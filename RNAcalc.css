@@ -35,7 +35,18 @@ button{
     left: 80px;
 }
 button:hover{
-    transform: skewX(15deg) scale(1.1);
+    animation-name:obr;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+/*    transform: skewX(15deg) scale(1.1);*/
+}
+@keyframes obr{
+/*    50%{transform: skewX(10deg) scale(1.1);}*/
+/*    100%{transform: skewX(15deg) scale(1.2);*/
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);transform: skewX(-15deg);}
+
+    }
 }
 section{
     padding: inherit;
@@ -43,15 +54,18 @@ section{
 .prettycard{
     background: linear-gradient(35deg,#ccffff,#ffcccc);
     border-radius: 20px;
-    width: 40%;
+    width: 70%;
     height: 200px;
     margin: 50px;
     box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+
 }
 #resp{
-    padding-bottom: 40px;
-    padding-top: 0px;
-    margin: -40px;
+    position: relative;
+    top:25px;
+    padding-bottom: -10px;
+    padding-top: 10px;
+    margin: -10px;
     text-align: center;
     font-size: 20px;
 }
@@ -64,4 +78,9 @@ section{
     padding: 4px;
      box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
   }
-
+.of{
+    overflow-x:hidden;
+}
+#pos{
+    margin-left: 20px;
+}
