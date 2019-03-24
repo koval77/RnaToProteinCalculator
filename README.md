@@ -1,4 +1,10 @@
-# RnaToProteinCalculator
-Simple JavaScript RNA to protein calculator
+# mRnaToProteinCalculator
+Simple JavaScript mRNA to protein calculator.
+It is inspired by Udacity course "Tales from Genome".
+## Instruction
 To use it, insert codons into the input field.
-I have build it using Udacity course "Tales from Genomoe".
+All letters before starting codon will be truncated.
+In the result window will be displayed following info:
+- Position of the starting codon
+- The whole truncated part of the mRNA that will be translated.
+- Translated aminoacid sequences.
