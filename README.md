@@ -8,3 +8,4 @@ In the result window will be displayed following info:
 - Position of the starting codon
 - The whole truncated part of the mRNA that will be translated.
 - Translated aminoacid sequences.
+Click [here](https://wojciechk.sgedu.site/RNAcalc/RNAcalc.html) to access the website.
