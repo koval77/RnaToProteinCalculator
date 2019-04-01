@@ -145,7 +145,8 @@
 
         console.log(aminoacid);
         document.getElementById('pos').innerHTML='Position of start codon: '+start;
-        document.getElementById('result').innerHTML=' Translated part: '+slicingstart+'\n\n\nAminoacids:\n '+aminoacid+'\n';
+        document.getElementById('translated').innerHTML=' Translated part: '+slicingstart
+        document.getElementById('result').innerHTML='\n'+'\nAminoacids:\n '+aminoacid+'\n';
     }
     function onMsDw(obj){
           obj.style.backgroundColor = "#1ec5e5";

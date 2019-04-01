@@ -2,28 +2,63 @@ body{
     background:linear-gradient(55deg,#ffffdd,#ccffff);
     padding: 10px;
 }
-canvas{
-    float: right;
+
+figure{   float: right;
     width: 350px;
     height: 350px;
-    background: linear-gradient(45deg,#ccff66,#aaaa11,#ccff66);
     position: relative;
-    bottom: 100px;
+    bottom: 200px;
+    right: 50px;
     border-color: black;
     border-width: 2px;
     border-style:outset;
     box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
     opacity:inherit;
-/*    background-color: #ccff66;*/
 }
-canvas:hover{
+figcaption{
+    text-align: center;
+}
+img{
+    width: inherit;
+    height: inherit;
+}
+@media(max-width:750px){
+    img{
+        display: none;
+    }
+    figure{
+        display: none;
+    }
+    .prettycard{width: 100%;
+        margin: 5px;
+        padding: 5px;
+    }
+    #rnatoprotein{
+        margin: 5px;
+        padding: 5px;
+    }
+    #res{
+        width: 100%;
+        margin: 0px;
+    }
+    section{
+        width: 100%;
+        padding: 0px;
+        margin: 5px;
+        position:relative;
+        left: 5px;
+    }
+}
+img:hover{
     opacity:0.7;
 }
 h1{
-    background-color: black;
-    color: white;
+    color: black;
     font-family:cursive;
     text-align:center;
+    opacity: 0.9;
+    border-radius: 40%;
+    box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
 }
 
 button{
@@ -33,23 +68,28 @@ button{
     box-shadow:0 10px 20px 6px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
     position: relative;
     left: 80px;
+    height: 50px;
 }
 button:hover{
     animation-name:obr;
     animation-duration: 5s;
-    animation-fill-mode: forwards;
+/*    animation-fill-mode: forwards;*/
+    animation-iteration-count: infinite;
 /*    transform: skewX(15deg) scale(1.1);*/
 }
+@-moz-keyframes obr { 50% { -moz-transform: rotate(180deg); }
+    99%{-moz-transform:skewX(-15deg);}}
+@-webkit-keyframes obr { 50% { -webkit-transform: rotate(180deg); }
+    99%{-webkit-transform:skewX(-15deg);}}
 @keyframes obr{
-/*    50%{transform: skewX(10deg) scale(1.1);}*/
-/*    100%{transform: skewX(15deg) scale(1.2);*/
-    50%{transform: rotate(180deg);}
-    100%{transform: rotate(360deg);transform: skewX(-15deg);}
+    50%{-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+    99%{-webkit-transform: skewX(-15deg);transform: transform: skewX(-15deg);}
 
     }
 }
 section{
     padding: inherit;
+    overflow:auto;
 }
 .prettycard{
     background: linear-gradient(35deg,#ccffff,#ffcccc);
@@ -58,6 +98,7 @@ section{
     height: 200px;
     margin: 50px;
     box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+    overflow:auto;
 
 }
 #resp{
@@ -83,4 +124,7 @@ section{
 }
 #pos{
     margin-left: 20px;
+}
+p{
+    margin-left: 5px;
 }

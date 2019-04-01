@@ -11,32 +11,25 @@
 </head>
     <body>
         <header><h1>mRNA to Protein calculator</h1></header>
+        <main>
         <section id="rnatoprotein" class="fullCard">
-        <article><p>Insert RNA letters that you want to translate here:</p></article>
+        <p>Insert RNA letters that you want to translate here:</p>
             RNA: <input type="text" id="rna">
         </section>
 <!--        onmousedown="onMsDw(this)" onmouseup="onMsUp(this)-->
             <button onclick="translaterna()"><strong>Translate codons</strong></button>
-        <canvas id="c"></canvas>
+            <figure>
+            <img src="geneticcode.jpg" alt="genetic code">
+                <figcaption> Genetic code. Rules of the translation of mRNA codons to amino acids.</figcaption>
+            </figure>
         <p id="resp"><strong>The result:</strong></p>
-        <section class="prettycard of">
+        <section class="prettycard">
             <p id="pos"></p>
+            <p id="translated"></p>
             <p id="result"></p>
         </section>
         <hr>
         <div>
-        </div>
-
-        <script>
-        var c=document.querySelector("#c");
-        var ctx=c.getContext("2d");
-        var image=new Image();
-        image.onload=function(){
-            console.log("image loaded");
-            ctx.drawImage(image,0,0,c.width,c.height-10);
-            for(var i=1;i<14;i++){ctx.strokeRect(10+(i*20),143,10,5);}
-        }
-        image.src="nukleo.PNG"
-        </script>
+            </div></main>
     </body>
 </html>
