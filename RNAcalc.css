@@ -33,7 +33,7 @@ img{
         display: none;
     }
 
-    section{
+    div{
         margin: 50% -20% 0% 0%;
         padding: 0%;
         width: 100vw;
@@ -93,11 +93,10 @@ button:hover{
     99%{-webkit-transform:skewX(-15deg);}}
 @keyframes obr{
     50%{-webkit-transform: rotate(180deg);transform: rotate(180deg);}
-    99%{-webkit-transform: skewX(-15deg);transform: transform: skewX(-15deg);}
+    99%{-webkit-transform: skewX(-15deg);transform: skewX(-15deg);}
 
     }
-}
-section{
+div{
     padding: inherit;
     overflow:auto;
 }
@@ -115,7 +114,7 @@ section{
 #resp{
     position: relative;
     top:25px;
-    padding-bottom: -10px;
+    padding-bottom: 0px;
     padding-top: 10px;
     margin: -10px;
     text-align: center;
