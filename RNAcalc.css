@@ -1,6 +1,9 @@
+* {
+  box-sizing: border-box;
+}
 body{
     background:linear-gradient(55deg,#ffffdd,#ccffff);
-    padding: 10px;
+    padding: 1%;
 }
 
 figure{   float: right;
@@ -22,17 +25,31 @@ img{
     width: inherit;
     height: inherit;
 }
-@media(max-width:750px){
+@media screen and (max-width:750px) {
     img{
         display: none;
     }
     figure{
         display: none;
     }
-    .prettycard{width: 100%;
-        margin: 5px;
-        padding: 5px;
+
+    section{
+        margin: 50% -20% 0% 0%;
+        padding: 0%;
+        width: 100vw;
+        max-width: 100%;
+        min-width:95%;
+        float:inherit;
     }
+    .prettycard{width: 100vw;
+        margin: 0vw -50vw 0vw 0vw;
+        padding: 0vw;
+    }
+    #pos,#translated,#result{
+        margin: inherit;
+        padding: inherit;
+    }
+    #resp{padding: 15px;}
     #rnatoprotein{
         margin: 5px;
         padding: 5px;
@@ -40,13 +57,6 @@ img{
     #res{
         width: 100%;
         margin: 0px;
-    }
-    section{
-        width: 100%;
-        padding: 0px;
-        margin: 5px;
-        position:relative;
-        left: 5px;
     }
 }
 img:hover{
@@ -94,11 +104,12 @@ section{
 .prettycard{
     background: linear-gradient(35deg,#ccffff,#ffcccc);
     border-radius: 20px;
-    width: 70%;
-    height: 200px;
-    margin: 50px;
+    width: 65vw;
+    height: 310px;
+    margin: 3vw 5vw 3vw 5vw;
     box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
     overflow:auto;
+    word-break:break-all;
 
 }
 #resp{
