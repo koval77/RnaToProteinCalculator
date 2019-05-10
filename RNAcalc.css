@@ -42,8 +42,8 @@ img{
         float:inherit;
     }
     .prettycard{width: 100vw;
-        margin: 0vw -50vw 0vw 0vw;
-        padding: 0vw;
+        margin: 30vw -50vw 0vw 0vw;
+        padding: 3vw 0 0 0;
     }
     #pos,#translated,#result{
         margin: inherit;
