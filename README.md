@@ -13,4 +13,4 @@ How it looks like:
 
 ![mRNA calculator](https://github.com/koval77/RnaToProteinCalculator/blob/master/rnacalc.JPG)
 
-Click [here](https://wojciechk.sgedu.site/RNAcalc/RNAcalc.html) to access the website.
+Click [here](https://github.com/koval77/RnaToProteinCalculator/blob/master/RNAcalc.html) to access the website.
